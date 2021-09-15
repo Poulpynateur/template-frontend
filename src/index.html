@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Interface</title>
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+
+    <template data-template-name="favorites">
+        <div class="container" data-each=":favorite"> </div>
+    </template>
+
+    <template data-template-name="favorite">
+        <div class="tile tile-centered">
+            <div class="tile-icon">
+                <object class="thumbnail" data-attr="thumbnail_url:data" type="image/png">
+                    <img class="thumbnail" src="https://www.tibs.org.tw/images/default.jpg">
+                </object>
+            </div>
+            <div class="tile-content">
+                <a data-attr="url:href" data-text="title"></a>
+                <section class="tile-subtitle" data-each="tags:tag"></section>
+            </div>
+        </div>
+        <div class="divider m-0"></div>
+    </template>
+
+    <template data-template-name="tag">
+        <span class="chip" data-text="" data-attr=":value"></span>
+    </template>
+
+    <template data-template-name="tags-menu">
+        <ul class="menu bg-gray">
+            <li class="menu-item"><span class="title-content text-primary">TAGS FILTER</span></li>
+            <li class="menu-item"><section data-each=":tag"></section></li>
+        </ul>
+    </template>
+
+    <div class="modal" id="post_modal">
+        <a class="modal-overlay" aria-label="Close"></a>
+        <div class="modal-container">
+            <div class="modal-header">
+                <a class="btn btn-clear float-right" aria-label="Close"></a>
+                <div class="modal-title h5">POST</div>
+            </div>
+            <div class="modal-body">
+                <div class="content">
+                    <label class="form-label">Auth</label>
+                    <div id="auth_group" class="columns">
+                        <div class="column col-6 form-group"><input class="form-input" type="text" id="input_username" placeholder="Username"></div>
+                        <div class="column col-6 form-group"><input class="form-input" type="password" id="input_password" placeholder="Password"></div>
+                    </div>
+                    <label class="form-label">Favorite</label>
+                    <div id="form_group">
+                        <div class="form-group"><input class="form-input" type="text" id="input_title" placeholder="Title"></div>
+                        <div class="form-group"><input class="form-input" type="text" id="input_url" placeholder="Url"></div>
+                        <div class="form-group"><input class="form-input" type="text" id="input_thumbnail" placeholder="Thumbnail"></div>
+                        <div class="form-group"><input class="form-input" type="text" id="input_tags" placeholder="Tags (; separated)"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="remove_btn" class="btn">Remove from name</button>
+                <button id="send_btn" class="btn btn-primary">Create new</button>
+            </div>
+        </div>
+    </div>
+    <button id="more_btn" class="btn btn-action btn-link"><i class="icon icon-plus"></i></button>
+
+    <header id="menu" class="mb-2">
+    </header>
+    <main id="app">
+    </main>
+
+    <script type="text/javascript" src="./scripts.js"></script>
+</body>
+</html>

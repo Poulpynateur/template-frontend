@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;400;700&display=swap');
+
+@import 'spectre-0.5.9/src/spectre.scss';
+@import 'spectre-0.5.9/src/spectre-icons.scss';
+
+.thumbnail {
+    height: 7rem;
+    width: 7rem;
+    object-fit:cover;
+    border-radius: 0.2rem;
+
+    @media screen and (max-width: $control-width-md) {
+        height: 5rem;
+        width: 5rem;
+    }
+}
+
+
+.menu .chip {
+    cursor: pointer;
+    user-select: none;
+}
+
+#more_btn {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 1;
+}
